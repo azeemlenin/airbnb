@@ -1,0 +1,21 @@
+<div class="container">
+  <center><h1>Welcome to UMNO Sdn. Bhd., <%= @user.user %>!</h1></center>
+  <hr>
+  <br>
+  Your email:
+  <b><u>
+      <%= @user.email %>
+    </u></b><br><br>
+  Please edit your previous details!<br><br>
+
+    <form action=<%= "/update/#{@property.id}" %> method="post">
+
+      <input type="hidden" name="_method" value="put">
+        Property<br>
+        <textarea style="color: black; background-color: cyan" cols="20" rows="5" name="property"> <%= @property.property %>
+        </textarea>
+        <input type="submit">
+    </form>
+
+
+</div>

@@ -1,0 +1,46 @@
+<div class="container">
+  <center><h1>Welcome to UMNO Sdn. Bhd., <%= @user.user %>!</h1></center>
+  <hr>
+  <br>
+  Your email:
+  <b><u>
+      <%= @user.email %>
+    </u></b><br><br>
+  Start gaining some money!<br>
+  Add your properties so that we can rent it to someone else!!<br><br>
+  <a href="/add">Create new property</a><br>
+  <br>
+
+  <hr>
+  <b>These are your properties:<br></b><br>
+
+  <% u = 1 %>
+  <% @property.each do |x| %>
+   <%= "#{u}: " %> <a href= <%= "/details/#{x.id}"%>> <%= x.property %></a>
+
+      <a href=<%="/update/#{x.id}"%> >[update]</a><br><br>
+
+      <form action="/delete" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="property[id]" value="<%= x.id %>">
+        <button type="submit">Delete</button>
+      </form>
+
+      <% u += 1 %><br>
+    <% end %>
+
+  <hr>
+  <center>
+  <a href="/homepage">Visit other properties!</a><br><br>
+  <b>These are the existing tags:<br></b><br>
+  <% @tag.each do |x| %>
+    <a href= <%= "/tags/#{x.id}"%>> <%= x.tag %></a> |
+    <% end %>
+  </center>
+
+  <hr><br><center>
+  <form action="/logout" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Logout</button>
+  </form></center>
+</div>

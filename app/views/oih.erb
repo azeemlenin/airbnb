@@ -1,0 +1,23 @@
+<div class="container">
+  <center><h1>Welcome to UMNO Sdn. Bhd., <%= @user.user %>!</h1></center>
+  <hr>
+  <br>
+  Your email:
+  <b><u>
+      <%= @user.email %>
+    </u></b><br><br>
+
+  <hr>
+  These are all the properties for the tag: <b><%= @tag.tag %></b><br><br>
+
+  <% i = 1 %>
+  <% @property.each do |x| %>
+  <%= "#{i}: "%><a href= <%="/details/#{x.id}"%>> <%= x.property %></a><br><br>
+    <% i += 1 %>
+  <% end %>
+
+  <hr>
+
+  <a href="/your_page">Get back to your page</a>
+  <br/><br/>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <center><h1>Welcome to UMNO Sdn. Bhd., <%= @user.user %>!</h1></center>
+  <hr>
+  <br>
+  Your email:
+  <b><u>
+      <%= @user.email %>
+    </u></b><br><br>
+  Please create your new property details!<br><br>
+
+  <form action="/add" method="post">
+  Property<br>
+  <input type="text" style="color: black; background-color: cyan" cols="20" rows="5" placeholder="Enter your property here" name="property">
+  <br/><br/>
+
+  Tag<br>
+  <input type="text" style="color: black; background-color: cyan" cols="20" rows="5" name="tag">
+  <input type="submit" >
+</form>
+
+</div>
